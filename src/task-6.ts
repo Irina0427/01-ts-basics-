@@ -1,7 +1,9 @@
-function  getFirstElement<T>(arr: [T, ...T[]]): T {
+function getFirstElement<T>(arr: T[]): T {
   return arr[0];
 }
-getFirstElement([1, 2, 3]);           // 1
-getFirstElement(["a", "b", "c"]);     // "a"
-getFirstElement([true, false, true]); // true
+const number = getFirstElement<number>([1, 2, 3]);                 // 1
+const string = getFirstElement<string>(["a", "b", "c"]);           // "a"
+const boolean = getFirstElement<boolean>([true, false, true]);     // true
+const mixed = getFirstElement<number | string>([1, "two", 3]);  // 1
 
+console.log(number, string, boolean, mixed);
